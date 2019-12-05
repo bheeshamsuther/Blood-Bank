@@ -1,0 +1,15 @@
+.main{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    width: 350px;
+    margin: 0 auto;
+    padding: 30px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.waves-effect{
+    width: 60%;
+}
+

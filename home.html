@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB5JomgfKtZjQMMpf-tHxTNFGfZ33O2-xg",
+      authDomain: "bloodbank-2.firebaseapp.com",
+      databaseURL: "https://bloodbank-2.firebaseio.com",
+      projectId: "bloodbank-2",
+      storageBucket: "bloodbank-2.appspot.com",
+      messagingSenderId: "662876017032",
+      appId: "1:662876017032:web:a48ba23167343e8b"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+</head>
+
+<body>
+
+  <div class="topnav" id="myTopnav">
+    <a href="home.html" class="active">Home</a>
+    <a href="donors.html">Donors</a>
+    <a href="#contact">My Account</a>
+    <a href="#about" id="logoutbtn">Log Out</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 4</div>
+        <img src="images/slide2.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 4</div>
+        <img src="images/BANNER1.jpg" style="width:100%">
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 4</div>
+        <img src="images/bankimage2.jpg" style="width:100%">
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 4</div>
+        <img src="images/bankimage1.jpg" style="width:100%">
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <center>
+      <div class="options">
+        <select class="browser-default" id="search" >
+          <option value="" disabled selected>Select Your Blood Group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="Ab-">AB-</option>
+        </select>
+        <br>
+        <a class="waves-effect waves-light btn" id="donate_Btn">select</a>
+      </div>
+    </center>
+    <div id="allgroup">
+      <h1 id="grup">All Groups</h1>
+
+      <div id="sec">
+        <div id="group"><span id="text">A+ :</span>
+          <span id="A+"></span>
+        </div>
+        <div id="group"><span id="text">A- :</span>
+          <span id="A-"></span>
+        </div>
+        <div id="group"><span id="text">B+ :</span>
+          <span id="B+"></span>
+        </div>
+        <div id="group"><span id="text">B- :</span>
+          <span id="B-"></span>
+        </div>
+        <div id="group"><span id="text">O+ :</span>
+          <span id="O+"></span>
+        </div>
+        <div id="group"><span id="text">O- :</span>
+          <span id="O-"></span>
+        </div>
+        <div id="group"><span id="text">AB+ :</span>
+          <span id="AB+"></span>
+        </div>
+        <div id="group"><span id="text">AB- :</span>
+          <span id="AB-"></span>
+        </div>
+      </div>
+    </div>
+    <br>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Blood Bank</h5>
+            <p class="grey-text text-lighten-4">
+              Blood Banking and Donation. Blood banking refers to the process of collecting,
+              separating, and storing blood. The first U.S. blood bank was established in
+               1936. Today, blood banks collect blood and separate it into its various 
+               components so they can be used most effectively according to the needs of 
+               the patient.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="home.html">Home</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Donors</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">My Accounnt</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+      Blood Bank © 2014 Copyright 
+        </div>
+      </div>
+    </footer>
+
+
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+</body>
+<script src="js/home.js"></script>
+
+</html>
